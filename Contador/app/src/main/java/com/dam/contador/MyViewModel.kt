@@ -13,6 +13,7 @@ class MyViewModel : ViewModel() {
     var num by mutableStateOf(0)
     var namee by mutableStateOf("")
     val numList = mutableListOf<Int>()
+    var round by mutableStateOf(0)
 
 
     fun funcionRandom() {
@@ -23,6 +24,11 @@ class MyViewModel : ViewModel() {
         Log.d("Tag", "Random")
     }
 
+    fun anotherRound(){
+        round = round + 1
+
+        Log.d("Tag", "New round")
+    }
 
     fun getNumero(): Int {
         return num
