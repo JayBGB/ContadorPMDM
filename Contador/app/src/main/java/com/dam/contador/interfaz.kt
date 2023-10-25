@@ -44,7 +44,7 @@ fun IU(viewModel: MyViewModel) {
 
     Column {
         Text(
-            text = "Random number: ${appData.value.num}\nNumber list: ${appData.value.numList}",
+            text = "Random number: ${appData.value.num}\nNumber list: ${viewModel.getLista()}",
             modifier = Modifier.padding(100.dp),
             color = Color.DarkGray
         )

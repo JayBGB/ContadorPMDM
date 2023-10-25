@@ -27,7 +27,9 @@ class MyViewModel : ViewModel() {
 
     fun funcionRandom() {
         val updatedData = appData.copy(num = (0..25).random())
+        updatedData.numList.add(updatedData.num)
         appData = updatedData
+
     }
 
     fun updateName(newName: String) {
