@@ -9,25 +9,29 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
+
 class MyViewModel : ViewModel() {
-    var num by mutableStateOf(0)
-    var namee by mutableStateOf("")
-    val numList = mutableListOf<Int>()
+    private var appData = AppData()
 
-
-    fun funcionRandom() {
-
-        num = (0..3).random()
-         numList.add(num)
-
-        Log.d("Tag", "Random")
+    fun updateAppData(newData: AppData) {
+        appData = newData
     }
-
 
     fun getNumero(): Int {
-        return num
+        return appData.num
     }
-fun getLista():List<Int>{
-    return numList
-}
+
+    fun getLista(): List<Int> {
+        return appData.numList
+    }
+
+    fun funcionRandom() {
+        val updatedData = appData.copy(num = (0..25).random())
+        appData = updatedData
+    }
+
+    fun updateName(newName: String) {
+        val updatedData = appData.copy(name = newName)
+        appData = updatedData
+    }
 }

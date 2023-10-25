@@ -16,25 +16,24 @@ import androidx.compose.ui.Modifier
 import com.dam.contador.ui.theme.ContadorTheme
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        val myViewModel: MyViewModel= MyViewModel()
+
+        val myViewModel = MyViewModel()
+
         setContent {
             ContadorTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
                     IU(myViewModel)
                 }
             }
         }
     }
 }
+
 
 
 
